@@ -9,6 +9,11 @@ const npm = (pkg, vers) => {
     return lib(`https://unpkg.com/${pkg}@${vers}`);
 }
 
+const seo = (prop, value) => {
+    if(prop.includes("og"))
+        return `<meta property='${prop}' content='${value}'>\n`;
+}
+
 const webpack = (config) => {
     module.exports = {
         ...config,
@@ -33,7 +38,7 @@ const from = (file) => {
 const build = (obj) => {
     var buf = "<head>";
     if("title" in obj)
-        buf += `<title>${obj.title}</title>`;
+        buf += `<title>${obj.title}</title>\n`;
     for(script of obj.scripts)
         buf += script;
     for(meta of obj.meta)
@@ -43,4 +48,4 @@ const build = (obj) => {
         fs.writeFileSync(obj.output, buf);
 }
 
-module.exports = {build, npm, lib, from, link, htmx, webpack};
+module.exports = {build, npm, lib, from, link, htmx, webpack, seo};

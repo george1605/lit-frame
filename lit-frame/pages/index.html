@@ -1,10 +1,16 @@
-<head><title>Ma best page</title><script src="https://unpkg.com/htmx.org@1.9.3"></script>
+<head><title>Ma best page</title>
+<script src="https://unpkg.com/htmx.org@1.9.3"></script>
+<script src="https://unpkg.com/ui-wall@1.7.5/code.js"></script>
+<script src="https://unpkg.com/restre-web-comps@1.2.5/index.js"></script>
 <script src="./global.js"></script>
 <link href='global.css' rel='stylesheet'></link>
+<meta property='og:title' content='Ma best page'>
 </head>
-<body><button hx-post="/global.css" hx-swap="outerHTML">
+<body><script src="https://unpkg.com/restre-web-comps@1.2.5/index.js"></script>
+<script src="https://unpkg.com/ui-wall@1.7.5/code.js"></script>
+<button hx-post="" hx-swap="outerHTML">
     Click Me
 </button>
-<script>
-
+<script type="module">
+    new Component("").modal("<h1>What?</h1>", 'open');
 </script></body>

@@ -10,4 +10,6 @@ app.get("*", (req, res) => {
     res.send(`<code style='color:red'>Page ${req.path} does not exist</code>`);
 })
 
-app.listen(3000);
+app.listen(3000, () => {
+    console.log("Listening on port 3000");
+});
