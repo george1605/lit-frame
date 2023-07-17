@@ -1,4 +1,4 @@
-const {htmx, from, build, lib, link} = require('./create');
+const {htmx, from, build, lib, link, webpack} = require('./create');
 
 build({
     scripts: [htmx(), lib("./global.js", "module")],

@@ -9,6 +9,15 @@ const npm = (pkg, vers) => {
     return lib(`https://unpkg.com/${pkg}@${vers}`);
 }
 
+const webpack = (config) => {
+    module.exports = {
+        ...config,
+        output: {
+            filename: "bundle.js"
+        }
+    };
+}
+
 const htmx = () => {
     return npm("htmx.org", "1.9.3");
 }
@@ -34,4 +43,4 @@ const build = (obj) => {
         fs.writeFileSync(obj.output, buf);
 }
 
-module.exports = {build, npm, lib, from, link, htmx};
+module.exports = {build, npm, lib, from, link, htmx, webpack};
